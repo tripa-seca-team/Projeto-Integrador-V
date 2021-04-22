@@ -9,9 +9,9 @@ module.exports = ({ConsultarImigrante, CriarImigrante, AlterarImigrante, Excluir
       return res.status(400).json({erros: erros.array()})
     }    
 
-    const {nome, email, cpf} = req.body
+    const {nome, email, cpf, rgOuDocumentoIdentificacao, nacionalidade, idade, localNascimento, telefone, endereco, bairro, cidade, estado, pais, profissao} = req.body
     try {
-      const imigrante = await CriarImigrante(nome, email, cpf)
+      const imigrante = await CriarImigrante(nome, email, cpf, rgOuDocumentoIdentificacao, nacionalidade, idade, localNascimento, telefone, endereco, bairro, cidade, estado, pais, profissao)
       res.json(imigrante)
     } catch(err) {
       res.status(400).json(`Erro ao tentar gravar imigrante ${err.message}`)
@@ -19,9 +19,9 @@ module.exports = ({ConsultarImigrante, CriarImigrante, AlterarImigrante, Excluir
   },
 
   consultar : async (req, res) => {
-    const {nome, email} = req.query
+    const {nome, email, cpf, rgOuDocumentoIdentificacao, nacionalidade, idade, localNascimento, telefone, endereco, bairro, cidade, estado, pais, profissao} = req.query
 
-    const imigrantes = await ConsultarImigrante(nome, email)
+    const imigrantes = await ConsultarImigrante(nome, email, cpf, rgOuDocumentoIdentificacao, nacionalidade, idade, localNascimento, telefone, endereco, bairro, cidade, estado, pais, profissao)
     res.json(imigrantes)
   },
 
@@ -41,9 +41,9 @@ module.exports = ({ConsultarImigrante, CriarImigrante, AlterarImigrante, Excluir
 
   alterar : async (req, res) => {
     const id = req.params.id
-    const {nome, email, cpf} = req.body
+    const {nome, email, cpf, rgOuDocumentoIdentificacao, nacionalidade, idade, localNascimento, telefone, endereco, bairro, cidade, estado, pais, profissao} = req.body
 
-    const imigrante = await AlterarImigrante(id, nome, email, cpf)
+    const imigrante = await AlterarImigrante(id, nome, email, cpf, rgOuDocumentoIdentificacao, nacionalidade, idade, localNascimento, telefone, endereco, bairro, cidade, estado, pais, profissao)
     res.json(imigrante)
   }
 })

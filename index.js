@@ -38,6 +38,10 @@ app.use('/api/imigrantes', rotaImigrante)
 fakeHMR.config({ app });
 app.use(express.static('public'));
 
+
+const rotaCurriculo = require ('./api/cadastro/rotas.js')
+app.use('/api/cadastro',rotaCurriculo);
+
 // require('./webpackRunner');
 
 app.get('*', (req, res) => {

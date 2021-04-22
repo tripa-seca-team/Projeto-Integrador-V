@@ -10,7 +10,6 @@ rotas.get('/', (req, res) => {
 rotas.post('/', (req, res) => {
   const curriculo = req.body
   
-
   if(!curriculo.nome) {
     res.status(400).json({erro: 'Nome não informado'})
   } else {
@@ -28,13 +27,8 @@ rotas.put('/:id',(req,res)=> {
 
   
   curriculo.nome = req.body.nome
-  res.send(curriculo)
-
-
-  
+  res.send(curriculo)  
 })
-
-
 
 rotas.delete('/:id',(req,res)=> {
 const id = req.params.id

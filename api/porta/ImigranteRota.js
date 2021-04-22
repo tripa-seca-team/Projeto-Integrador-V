@@ -16,6 +16,17 @@ module.exports = (container) => {
       .withMessage('Nome não pode ser vazio ou somente com espaços'),
     body('email').isEmail(),
     body('cpf').isLength({ min: 11, max: 14 }),
+    body('rgOuDocumentoIdentificacao').isLength({ min: 11, max: 14 }),
+    body('nacionalidade').isLength({ min: 3, max: 14 }),    
+    body('idade').isLength({ min: 2, max: 2 }),
+    body('localNascimento').isLength({ min: 3, max: 14 }),
+    body('telefone').isLength({ min: 11, max: 14 }),    
+    body('endereco').isLength({ min: 5, max: 25 }),
+    body('bairro').isLength({ min: 2, max: 14 }),
+    body('cidade').isLength({ min: 2, max: 14 }),
+    body('estado').isLength({ min: 2, max: 14 }),
+    body('pais').isLength({ min: 2, max: 14 }),
+    body('profissao').isLength({ min: 2, max: 14 }),    
     controlador.inserir
   )
   
