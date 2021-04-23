@@ -33,8 +33,8 @@ const ImigranteRepositorio = ({ImigranteModel}) => ({
   },
 
   alterar: async (id, imigrante) => {
-    const antigoImigrante = await ImigranteModel.findByIdAndUpdate(id, imigrante)
-    console.log('Antigo imigrante: ', antigoImigrante)
+    const alteraImigrante = await ImigranteModel.findByIdAndUpdate(id, imigrante)
+    console.log('Alterou imigrante: ', alteraImigrante)
   },
 
   alterarNome: async (id, nome) => {

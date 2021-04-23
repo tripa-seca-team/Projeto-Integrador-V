@@ -39,10 +39,10 @@ fakeHMR.config({ app });
 app.use(express.static('public'));
 
 
+/*
 const rotaCurriculo = require ('./api/cadastro/rotas.js')
 app.use('/api/cadastro',rotaCurriculo);
-
-// require('./webpackRunner');
+*/
 
 app.get('*', (req, res) => {
   res.send(`<!DOCTYPE html>

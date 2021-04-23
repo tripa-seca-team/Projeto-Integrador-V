@@ -17,17 +17,14 @@ class ImigranteRepositorioMemoria {
 
   excluir(id) {
     const imigrante = this.db.find(c => c.id === Number(id))
-
     if(!imigrante)
       throw new Error('Imigrante não encontrado')
-
     this.db = this.db.filter(c => c.id !== Number(id))
   }
 
   alterar(id, imigrante) {
     imigrante.id = this.db[id - 1].id
     this.db[id - 1] = imigrante
-
     return imigrante
   }
 }

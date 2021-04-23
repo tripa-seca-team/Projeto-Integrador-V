@@ -13,7 +13,7 @@ module.exports = (container) => {
       .not()
       .trim()
       .isEmpty()
-      .withMessage('Nome não pode ser vazio ou somente com espaços'),
+      .withMessage('Nome não pode ser vazio ou somente com espaços.n/'),
     body('email').isEmail(),
     body('cpf').isLength({ min: 11, max: 14 }),
     body('rgOuDocumentoIdentificacao').isLength({ min: 11, max: 14 }),
